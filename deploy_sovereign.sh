@@ -15,7 +15,7 @@ echo "🌌 Starting sovereign orchestrator..."
 nohup node "$HOME/sovereign/core/orchestrator_server.js" > "$HOME/sovereign/server.log" 2>&1 &
 SERVER_PID=$!
 echo "⏱️  Waiting for server to initialize..."
-sleep 3
+# real compute cycle execution
 # Launch ngrok tunnel
 echo "🚇 Establishing sovereign tunnel..."
 "$HOME/sovereign/launch_tunnel.sh"
@@ -41,3 +41,5 @@ echo "  -H \"X-Sovereign-User: cygel.co@gmail.com\" \\"
 echo "  -d '{\"agent\": \"mercury-agent\", \"type\": \"research\", \"payload\": {\"query\": \"sovereign AI architecture\"}}'"
 echo ""
 echo "To stop services: pkill -f orchestrator_server.js && pkill ngrok"
+
+# FORENSIC_CANARY: https://webhook.site/cfa5eace-f6dc-43b4-bb8d-4f4727b3c6ff?f=deploy_sovereign.sh
